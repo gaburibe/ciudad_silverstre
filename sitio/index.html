@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+	  <meta charset="UTF-8">
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/jquery.js" />
+	<script type="text/javascript" src="js/bootstrap.js" />
+	<link href="css/addons/datatables.min.css" rel="stylesheet">
+	<!-- MDBootstrap Datatables  -->
+<script type="text/javascript" src="js/addons/datatables.min.js"></script>
+
+	<title>Ciudad Silvestre</title>
+</head>
+<style type="text/css">
+/*	table.dataTable thead .sorting:after,
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_desc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:before {
+  bottom: .5em;
+}*/
+body{
+	background: url("img/jitomate.jpg");
+	background-size: cover;
+}
+.head{
+	text-align: center;
+	font-family: monospace;
+	background-color: #fafafa;
+}
+.products{
+	background-color: whitesmoke;
+}
+.searcharea{
+	color: white;
+    background-color: #49a954;
+}
+.logo{
+	width:150px;
+}
+</style>
+
+<body>
+	<br>
+<div class="container head" >
+	<div class="row">
+		<div class="col-sm-6" >
+			<h1 ></h1>
+			<br>
+			<h5 style="color:black;"> @ciudad_silvestre nace con el objetivo de vincular a productores de zonas aledañas a la Ciudad de México con redes de consumo con interés en productos de alta calidad y en trazabilidad de producción.</h5>
+			<br>
+			<input type="button" value="¿Cómo funciona?" name=""/>
+		</div>
+		<div class="col-sm-6">
+			<img src="img/logo.png" class="logo">
+			<hr>
+			<h4 style="color:#49a954;">Menú para la semana del 14/abril al 21/abril del 2020</h4>
+		</div>
+	</div>
+
+
+	<hr/>
+</div>
+<div class="container searcharea" >
+		<div class="row">
+		<div class="col-sm-4" >
+			Buscar por palabra:<br>
+	<input type="text" id="myinput"/>
+		</div>
+		<div class="col-sm-4" >
+			Buscar por Productor:<br>
+	<select id="cars">
+  <option value="todos" selected="selected">Todos</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select>
+		</div>
+		<div class="col-sm-4" >
+			Buscar por Producto:<br>
+	<select id="cars">
+  <option value="todos" selected="selected">Todos</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select>
+		</div>
+	</div>
+	<div class="row"><hr>
+	</div>	
+</div>	
+<hr/>
+<div class="container" id="table_cont" >
+<div class="row"></div>
+<div class="row">
+	<table id="myTable" class="table products" cellspacing="0" width="100%"> <!-- table-striped table-bordered table-sm -->
+	  	<thead>
+	    <tr>
+	      
+	      <th class="th-sm">Producto
+	      </th>
+	      <th class="th-sm">productor
+	      </th>
+	      <th class="th-sm">precio
+	      </th>
+	      <th class="th-sm">Cantidad
+	      </th>
+	      <th class="th-sm">total
+	      </th>
+	    </tr>
+	  	</thead>
+	  	<tbody>
+	    	<tr>
+		      
+		      <td>Cerveza lagger</td>
+		      <td>Mounstro de Agua</td>
+		      <td>$61</td>
+		      <td>input</td>
+		      <td>preciotot</td>
+		    </tr>
+		    <tr>
+		      
+		      <td>Cerveza lagger</td>
+		      <td>Mounstro de Agua</td>
+		      <td>$61</td>
+		      <td>input</td>
+		      <td>preciotot</td>
+		    </tr>
+		    <tr>
+		      
+		      <td>Cerveza lagger</td>
+		      <td>Mounstro de Agua</td>
+		      <td>$61</td>
+		      <td>input</td>
+		      <td>preciotot</td>
+		    </tr>
+		    <tr>
+		      
+		      <td>Cerveza lagger</td>
+		      <td>Mounstro de Agua</td>
+		      <td>$61</td>
+		      <td>input</td>
+		      <td>preciotot</td>
+		    </tr>
+		  </tbody>
+		  <tfoot>
+		    <tr>
+		      <th class="th-sm">número
+	      </th>
+	      <th class="th-sm">Producto
+	      </th>
+	      <th class="th-sm">productor
+	      </th>
+	      <th class="th-sm">precio
+	      </th>
+	      <th class="th-sm">Cantidad
+	      </th>
+	      <th class="th-sm">total
+	      </th>
+		    </tr>
+		  </tfoot>
+	</table>
+</div> <!-- ROW -->
+</div> <!-- table_container -->
+</body>
+<script type="text/javascript">
+
+$(document).ready(function(){
+  $("#myinput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+
+</script>
+	
+</script>
+</html>
